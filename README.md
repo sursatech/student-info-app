@@ -9,19 +9,19 @@ A simple student information CRUD app built with React, TypeScript, and Tailwind
 
 ## Setup
 1. Clone this repo
-2. Install dependencies:
+2. Install [Bun](https://bun.sh/) if you haven't already:
    ```sh
-   npm install
-   # or
-   pnpm install
+   curl -fsSL https://bun.sh/install | bash
    ```
-3. Start the dev server:
+3. Install dependencies:
    ```sh
-   npm run dev
-   # or
-   pnpm run dev
+   bun install
    ```
-4. Make sure your backend API is running at `http://localhost:3000`.
+4. Start the dev server:
+   ```sh
+   bun run dev
+   ```
+5. Make sure your backend API is running at `http://localhost:3000`.
 
 ## Troubleshooting
 - **CORS error?**

@@ -4,6 +4,7 @@ A full-stack student management system with React frontend and Express API backe
 
 ## Quick Start
 
+### **Local Development**
 1. **Install dependencies**
    ```bash
    bun install
@@ -21,6 +22,31 @@ A full-stack student management system with React frontend and Express API backe
    ```
 
 3. **Start both apps**
+   ```bash
+   bun start
+   ```
+
+### **Server Deployment**
+1. **Install dependencies**
+   ```bash
+   bun install
+   ```
+
+2. **Setup database**
+   ```bash
+   cd backend
+   bunx prisma generate
+   bunx prisma migrate dev --name init
+   cd ..
+   ```
+
+3. **Setup environment**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your server database credentials
+   ```
+
+4. **Start both apps**
    ```bash
    bun start
    ```

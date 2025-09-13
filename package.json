@@ -3,21 +3,35 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "workspaces": [
-    "frontend",
-    "backend"
-  ],
   "scripts": {
     "start": "bun run start:backend & bun run start:frontend & wait",
     "dev": "bun run dev:backend & bun run dev:frontend & wait",
-    "start:backend": "cd backend && bun start",
-    "start:frontend": "cd frontend && bun start",
-    "dev:backend": "cd backend && bun dev",
-    "dev:frontend": "cd frontend && bun dev",
+    "start:backend": "cd backend && bun src/index.ts",
+    "start:frontend": "cd frontend && NODE_ENV=development bun src/index.tsx",
+    "dev:backend": "cd backend && bun src/index.ts",
+    "dev:frontend": "cd frontend && bun --hot src/index.tsx",
     "build": "bun run build:backend && bun run build:frontend",
-    "build:backend": "cd backend && bun run build",
-    "build:frontend": "cd frontend && bun run build",
-    "install:all": "bun install && cd backend && bun install && cd ../frontend && bun install"
+    "build:backend": "cd backend && bun build src/index.ts --outdir dist --target bun",
+    "build:frontend": "cd frontend && bun run build.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.12.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "bun-plugin-tailwind": "^0.0.15",
+    "react": "^19",
+    "react-dom": "^19",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.1.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/bun": "latest",
+    "prisma": "^6.12.0",
+    "typescript": "^5.8.3"
   },
   "description": "Student Info Management System - Monorepo with Frontend and Backend",
   "keywords": ["student", "management", "api", "react", "bun", "monorepo"],

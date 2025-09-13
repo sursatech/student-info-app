@@ -1,8 +1,9 @@
 import { serve } from "bun";
 import index from "./index.html";
+import { config } from "./config";
 
 const server = serve({
-  port: 5173,
+  port: parseInt(config.FRONTEND_PORT),
   routes: {
     // Serve index.html for all unmatched routes.
     "/*": index,

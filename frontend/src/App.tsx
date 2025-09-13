@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { config } from './config';
 
 // Student type
 interface Student {
@@ -8,7 +9,7 @@ interface Student {
   age: number;
 }
 
-const API_URL = 'http://localhost:3000/students';
+const API_URL = config.API_URL;
 
 function App() {
   const [students, setStudents] = useState<Student[]>([]);

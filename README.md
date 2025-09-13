@@ -9,10 +9,13 @@ A full-stack student management system with React frontend and Express API backe
    bun install
    ```
 
-2. **Setup database**
+2. **Setup environment**
    ```bash
+   # Copy .env.example to .env and edit with your values
+   cp .env.example .env
+   # Edit .env file with your database credentials
+   
    cd backend
-   echo 'DATABASE_URL="postgresql://username:password@localhost:5432/student_info_db"' > .env
    bunx prisma generate
    bunx prisma migrate dev --name init
    ```
@@ -30,5 +33,31 @@ A full-stack student management system with React frontend and Express API backe
 - `bun start` - Start both frontend and backend
 - `bun dev` - Development mode
 - `bun build` - Build both apps
+
+## Environment Variables
+
+1. **Copy the example file:**
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Edit `.env` file with your values:**
+   ```env
+   # Database Configuration
+   DATABASE_URL="postgresql://username:password@localhost:5432/student_info_db"
+   
+   # Server Configuration  
+   PORT=3000
+   FRONTEND_PORT=5173
+   
+   # API Configuration
+   API_BASE_URL="http://localhost:3000"
+   FRONTEND_URL="http://localhost:5173"
+   
+   # Environment
+   NODE_ENV="development"
+   ```
+
+**Note:** The `.env.example` file contains all required environment variables with default values. Both frontend and backend will use these shared environment variables.
 
 Built with Bun, React, Express, Prisma & PostgreSQL.

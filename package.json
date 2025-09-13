@@ -1,22 +1,26 @@
 {
-  "name": "bun-react-template",
-  "version": "0.1.0",
+  "name": "student-info-monorepo",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
-    "dev": "bun --hot src/index.tsx",
-    "start": "NODE_ENV=production bun src/index.tsx",
-    "build": "bun run build.ts"
+    "start": "bun run start:backend & bun run start:frontend & wait",
+    "dev": "bun run dev:backend & bun run dev:frontend & wait",
+    "start:backend": "cd backend && bun start",
+    "start:frontend": "cd frontend && bun start",
+    "dev:backend": "cd backend && bun dev",
+    "dev:frontend": "cd frontend && bun dev",
+    "build": "bun run build:backend && bun run build:frontend",
+    "build:backend": "cd backend && bun run build",
+    "build:frontend": "cd frontend && bun run build",
+    "install:all": "bun install && cd backend && bun install && cd ../frontend && bun install"
   },
-  "dependencies": {
-    "bun-plugin-tailwind": "^0.0.15",
-    "react": "^19",
-    "react-dom": "^19",
-    "tailwindcss": "^4.1.11"
-  },
-  "devDependencies": {
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@types/bun": "latest"
-  }
+  "description": "Student Info Management System - Monorepo with Frontend and Backend",
+  "keywords": ["student", "management", "api", "react", "bun", "monorepo"],
+  "author": "",
+  "license": "ISC"
 }

@@ -1,21 +1,34 @@
-# bun-react-tailwind-template
+# Student Info Management System
 
-To install dependencies:
+A full-stack student management system with React frontend and Express API backend.
 
-```bash
-bun install
-```
+## Quick Start
 
-To start a development server:
+1. **Install dependencies**
+   ```bash
+   bun install
+   ```
 
-```bash
-bun dev
-```
+2. **Setup database**
+   ```bash
+   cd backend
+   echo 'DATABASE_URL="postgresql://username:password@localhost:5432/student_info_db"' > .env
+   bunx prisma generate
+   bunx prisma migrate dev --name init
+   ```
 
-To run for production:
+3. **Start both apps**
+   ```bash
+   bun start
+   ```
 
-```bash
-bun start
-```
+## URLs
+- Frontend: http://localhost:5173
+- Backend: http://localhost:3000
 
-This project was created using `bun init` in bun v1.2.19. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+## Scripts
+- `bun start` - Start both frontend and backend
+- `bun dev` - Development mode
+- `bun build` - Build both apps
+
+Built with Bun, React, Express, Prisma & PostgreSQL.

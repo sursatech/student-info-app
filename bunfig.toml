@@ -1,4 +1,6 @@
+[install]
+cache = true
+production = false
 
-[serve.static]
-plugins = ["bun-plugin-tailwind"]
-env = "BUN_PUBLIC_*"
+[install.scopes]
+"@student-info" = "file:./packages"

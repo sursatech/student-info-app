@@ -87,3 +87,4 @@ A full-stack student management system with React frontend and Express API backe
 **Note:** The `.env.example` file contains all required environment variables with default values. Both frontend and backend will use these shared environment variables.
 
 Built with Bun, React, Express, Prisma & PostgreSQL.
+This is from develop branch
